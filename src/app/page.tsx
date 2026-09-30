@@ -332,23 +332,29 @@ export default function LandingPage() {
             </h2>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step, i) => (
-              <div key={step.number} className="group relative">
-                {/* Connector line */}
-                {i < steps.length - 1 && (
-                  <div className="absolute top-10 left-full hidden lg:block w-full h-px bg-gradient-to-r from-rose-500/40 to-transparent -translate-x-1/2 z-0" />
-                )}
-                <div className="relative z-10">
-                  <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-rose-600/10 ring-1 ring-rose-500/20 text-rose-400 group-hover:bg-rose-600/20 group-hover:ring-rose-500/40 transition-all duration-300">
-                    {step.icon}
+          {/* Connector line — desktop only, sits behind the icons */}
+          <div className="relative">
+            <div className="absolute top-8 left-0 right-0 hidden lg:flex items-center px-[12.5%] pointer-events-none">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-rose-500/25 to-transparent" />
+            </div>
+
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {steps.map((step, i) => (
+                <div key={step.number} className="group flex flex-col items-center text-center lg:items-start lg:text-left">
+                  {/* Icon + number badge */}
+                  <div className="relative mb-5 shrink-0">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-900 ring-1 ring-white/10 text-rose-400 group-hover:bg-rose-600/10 group-hover:ring-rose-500/30 transition-all duration-300">
+                      {step.icon}
+                    </div>
+                    <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-rose-600 text-[10px] font-bold text-white ring-2 ring-black">
+                      {i + 1}
+                    </span>
                   </div>
-                  <span className="text-5xl font-black text-white/5 absolute -top-2 left-16">{step.number}</span>
-                  <h3 className="mb-2 text-base font-bold text-white">{step.title}</h3>
+                  <h3 className="mb-2 text-[15px] font-bold text-white">{step.title}</h3>
                   <p className="text-sm leading-relaxed text-zinc-500">{step.description}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
