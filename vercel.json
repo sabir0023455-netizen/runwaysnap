@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "src/app/api/generate/route.ts": {
+      "maxDuration": 120
+    },
+    "src/app/api/stripe/webhook/route.ts": {
+      "maxDuration": 30
+    }
+  }
+}
