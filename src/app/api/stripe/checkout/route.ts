@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
             price_data: {
               currency: 'usd',
               product_data: {
-                name: 'RunwaySnap — 1 Generation',
+                name: 'RunwaySnap: 1 Generation',
                 description: '4 AI-generated model photos',
               },
               unit_amount: PAY_PER_GENERATION_UNIT_AMOUNT,

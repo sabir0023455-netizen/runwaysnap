@@ -253,9 +253,9 @@ export default function PricingPage() {
                     ['HD downloads', ['✓', '✓', '✓', '✓']],
                     ['All model settings', ['✓', '✓', '✓', '✓']],
                     ['Generation history', ['✓', '✓', '✓', '✓']],
-                    ['Priority processing', ['—', '—', '✓', '✓']],
-                    ['Priority support', ['—', '—', '✓', '✓']],
-                    ['Dedicated manager', ['—', '—', '—', '✓']],
+                    ['Priority processing', ['✗', '✗', '✓', '✓']],
+                    ['Priority support', ['✗', '✗', '✓', '✓']],
+                    ['Dedicated manager', ['✗', '✗', '✗', '✓']],
                   ].map(([feature, values]) => (
                     <tr key={feature as string}>
                       <td className="py-3 font-medium text-zinc-700">{feature}</td>

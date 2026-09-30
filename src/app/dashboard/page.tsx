@@ -34,7 +34,7 @@ export default function DashboardPage() {
           <div className="card">
             <p className="text-sm text-zinc-500">Credits remaining</p>
             <p className="mt-1 text-3xl font-bold text-zinc-900">3</p>
-            <p className="mt-1 text-xs text-zinc-400">Free plan — sign in to manage</p>
+            <p className="mt-1 text-xs text-zinc-400">Free plan. Sign in to manage.</p>
           </div>
           <div className="card">
             <p className="text-sm text-zinc-500">Current plan</p>

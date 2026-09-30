@@ -32,7 +32,7 @@ export default function AccountPage() {
             </div>
             <div>
               <p className="font-medium text-zinc-400">Sign in to view profile</p>
-              <p className="text-sm text-zinc-400">—</p>
+              <p className="text-sm text-zinc-400">Not signed in</p>
             </div>
           </div>
         </div>

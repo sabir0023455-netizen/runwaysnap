@@ -49,7 +49,7 @@ const steps = [
   {
     number: '02',
     title: 'Choose your model',
-    description: 'Gender, skin tone, body type, pose, and background — all yours to pick.',
+    description: 'Gender, skin tone, body type, pose, and background. All yours to pick.',
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
@@ -79,9 +79,9 @@ const steps = [
 ]
 
 const features = [
-  { title: 'Diverse models', desc: 'Female, male, gender-neutral — all skin tones and body types represented.', icon: '👤' },
-  { title: 'Multiple poses', desc: 'Standing, casual, editorial, lifestyle — whatever fits your brand voice.', icon: '🎨' },
-  { title: 'Custom backgrounds', desc: 'Studio white, outdoor, lifestyle — professional in every setting.', icon: '🖼️' },
+  { title: 'Diverse models', desc: 'Female, male, gender-neutral. All skin tones and body types represented.', icon: '👤' },
+  { title: 'Multiple poses', desc: 'Standing, casual, editorial, lifestyle. Whatever fits your brand voice.', icon: '🎨' },
+  { title: 'Custom backgrounds', desc: 'Studio white, outdoor, lifestyle. Professional in every setting.', icon: '🖼️' },
   { title: '4 photos per job', desc: 'Every generation delivers 4 unique shots from a single upload.', icon: '📸' },
   { title: 'HD quality', desc: 'High-resolution exports ready for your website, print, or paid ads.', icon: '⚡' },
   { title: 'Generation history', desc: 'All your past generations saved and accessible anytime.', icon: '🗂️' },
@@ -397,7 +397,7 @@ export default function LandingPage() {
                   Replace a $3,000 photoshoot with a $1 generation.
                 </h2>
                 <p className="mb-8 text-zinc-400 leading-relaxed">
-                  Traditional model photography costs thousands. Booking studios, hiring models, photography, editing — it adds up fast. RunwaySnap cuts that to nothing.
+                  Traditional model photography costs thousands. Booking studios, hiring models, photography, editing. It all adds up fast. RunwaySnap cuts that to nothing.
                 </p>
                 <ul className="space-y-3 mb-10">
                   {[
