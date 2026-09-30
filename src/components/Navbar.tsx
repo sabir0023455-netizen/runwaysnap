@@ -2,10 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { SignInButton, SignUpButton, UserButton, useAuth } from '@clerk/nextjs'
 
 export default function Navbar() {
-  const { isSignedIn } = useAuth()
   const pathname = usePathname()
 
   const isActive = (path: string) =>
@@ -25,45 +23,14 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-6 sm:flex">
-          {isSignedIn ? (
-            <>
-              <Link href="/dashboard" className={`text-sm transition-colors ${isActive('/dashboard')}`}>
-                Dashboard
-              </Link>
-              <Link href="/generate" className={`text-sm transition-colors ${isActive('/generate')}`}>
-                Generate
-              </Link>
-              <Link href="/pricing" className={`text-sm transition-colors ${isActive('/pricing')}`}>
-                Pricing
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link href="/pricing" className={`text-sm transition-colors ${isActive('/pricing')}`}>
-                Pricing
-              </Link>
-            </>
-          )}
+          <Link href="/pricing" className={`text-sm transition-colors ${isActive('/pricing')}`}>
+            Pricing
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
-          {isSignedIn ? (
-            <>
-              <Link href="/generate" className="btn-primary text-sm hidden sm:inline-flex">
-                Generate Photos
-              </Link>
-              <UserButton afterSignOutUrl="/" />
-            </>
-          ) : (
-            <>
-              <SignInButton mode="modal">
-                <button className="btn-ghost text-sm">Sign in</button>
-              </SignInButton>
-              <SignUpButton mode="modal">
-                <button className="btn-primary text-sm">Get started free</button>
-              </SignUpButton>
-            </>
-          )}
+          <Link href="/sign-in" className="btn-ghost text-sm">Sign in</Link>
+          <Link href="/sign-up" className="btn-primary text-sm">Get started free</Link>
         </div>
       </div>
     </nav>

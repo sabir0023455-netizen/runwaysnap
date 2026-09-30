@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { SignUpButton } from '@clerk/nextjs'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -107,14 +106,12 @@ export default function LandingPage() {
               Replace expensive photoshoots with AI.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <SignUpButton mode="modal">
-                <button className="btn-primary px-8 py-3.5 text-base">
-                  Generate photos free
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </button>
-              </SignUpButton>
+              <Link href="/sign-up" className="btn-primary px-8 py-3.5 text-base">
+                Generate photos free
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
               <p className="text-sm text-zinc-400">3 free generations. No credit card required.</p>
             </div>
           </div>
@@ -122,7 +119,6 @@ export default function LandingPage() {
           {/* Hero image placeholder */}
           <div className="mt-16 rounded-3xl border border-zinc-100 bg-zinc-50 p-2 shadow-xl shadow-zinc-100">
             <div className="grid grid-cols-4 gap-3 rounded-2xl bg-white p-6">
-              {/* Upload area */}
               <div className="col-span-1 flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-zinc-200 bg-zinc-50 p-6 text-center">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-100">
                   <svg className="h-5 w-5 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -132,8 +128,6 @@ export default function LandingPage() {
                 <p className="text-xs font-medium text-zinc-600">Your garment</p>
                 <p className="mt-1 text-xs text-zinc-400">Upload photo</p>
               </div>
-
-              {/* Generated images */}
               {[
                 { bg: 'bg-zinc-100', label: 'Studio white' },
                 { bg: 'bg-stone-100', label: 'Editorial' },
@@ -175,7 +169,6 @@ export default function LandingPage() {
               From clothing photo to professional model shoot in 4 simple steps.
             </p>
           </div>
-
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step) => (
               <div key={step.number} className="relative">
@@ -198,11 +191,8 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-white">Everything you need</h2>
-            <p className="text-lg text-zinc-400">
-              Powerful options to match your brand aesthetic perfectly.
-            </p>
+            <p className="text-lg text-zinc-400">Powerful options to match your brand aesthetic perfectly.</p>
           </div>
-
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'Diverse model options', desc: 'Female, male, and gender-neutral models across all skin tones and body types.' },
@@ -227,11 +217,8 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-zinc-900">Simple pricing</h2>
-            <p className="text-lg text-zinc-500">
-              Start free, upgrade when you&apos;re ready.
-            </p>
+            <p className="text-lg text-zinc-500">Start free, upgrade when you&apos;re ready.</p>
           </div>
-
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {plans.map((plan) => (
               <div
@@ -249,27 +236,16 @@ export default function LandingPage() {
                     </span>
                   </div>
                 )}
-                <h3 className={`font-semibold ${plan.popular ? 'text-white' : 'text-zinc-900'}`}>
-                  {plan.name}
-                </h3>
+                <h3 className={`font-semibold ${plan.popular ? 'text-white' : 'text-zinc-900'}`}>{plan.name}</h3>
                 <div className="mt-2 flex items-baseline gap-1">
-                  <span className={`text-3xl font-bold ${plan.popular ? 'text-white' : 'text-zinc-900'}`}>
-                    {plan.price}
-                  </span>
-                  <span className={`text-sm ${plan.popular ? 'text-zinc-400' : 'text-zinc-500'}`}>
-                    {plan.unit}
-                  </span>
+                  <span className={`text-3xl font-bold ${plan.popular ? 'text-white' : 'text-zinc-900'}`}>{plan.price}</span>
+                  <span className={`text-sm ${plan.popular ? 'text-zinc-400' : 'text-zinc-500'}`}>{plan.unit}</span>
                 </div>
-                <p className={`mt-2 text-sm ${plan.popular ? 'text-zinc-400' : 'text-zinc-500'}`}>
-                  {plan.description}
-                </p>
+                <p className={`mt-2 text-sm ${plan.popular ? 'text-zinc-400' : 'text-zinc-500'}`}>{plan.description}</p>
                 <ul className="mt-6 space-y-2.5">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm">
-                      <svg
-                        className={`h-4 w-4 flex-shrink-0 ${plan.popular ? 'text-zinc-300' : 'text-zinc-900'}`}
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-                      >
+                      <svg className={`h-4 w-4 flex-shrink-0 ${plan.popular ? 'text-zinc-300' : 'text-zinc-900'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className={plan.popular ? 'text-zinc-300' : 'text-zinc-600'}>{f}</span>
@@ -295,18 +271,14 @@ export default function LandingPage() {
       {/* CTA */}
       <section className="border-t border-zinc-100 py-20 sm:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <h2 className="mb-4 text-4xl font-bold text-zinc-900 sm:text-5xl">
-            Start generating today
-          </h2>
+          <h2 className="mb-4 text-4xl font-bold text-zinc-900 sm:text-5xl">Start generating today</h2>
           <p className="mb-10 text-xl text-zinc-500">
             Join hundreds of fashion brands saving thousands on photography.
             3 free generations — no credit card needed.
           </p>
-          <SignUpButton mode="modal">
-            <button className="btn-primary px-10 py-4 text-base">
-              Try RunwaySnap free
-            </button>
-          </SignUpButton>
+          <Link href="/sign-up" className="btn-primary px-10 py-4 text-base">
+            Try RunwaySnap free
+          </Link>
         </div>
       </section>
 

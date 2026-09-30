@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useAuth } from '@clerk/nextjs'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -112,35 +111,11 @@ const faqs = [
 ]
 
 export default function PricingPage() {
-  const { isSignedIn } = useAuth()
   const router = useRouter()
   const [loading, setLoading] = useState<string | null>(null)
 
-  const handleCheckout = async (planKey: string) => {
-    if (!isSignedIn) {
-      router.push('/sign-up')
-      return
-    }
-
-    setLoading(planKey)
-    try {
-      const res = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan: planKey }),
-      })
-      const data = await res.json()
-      if (data.url) {
-        window.location.href = data.url
-      } else {
-        throw new Error(data.error || 'Failed to create checkout')
-      }
-    } catch (err) {
-      console.error(err)
-      alert('Failed to start checkout. Please try again.')
-    } finally {
-      setLoading(null)
-    }
+  const handleCheckout = (_planKey: string) => {
+    router.push('/sign-up')
   }
 
   return (
